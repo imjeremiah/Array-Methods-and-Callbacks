@@ -76,8 +76,8 @@ Parameters:
  */
 
 function getWinnersByYear(fifaData, getWinnersCB, getYearsCB) {
-    const winnerList = getWinnersCB.map(function(item, index, getWinnersCB){
-        return `in ${getYearsCB[index]}, ${item} won the world cup!`
+    const winnerList = getYearsCB(fifaData).map(function(item, index){
+        return `In ${getWinnersCB(fifaData)[index]}, ${item} won the world cup!`
     }); 
     return winnerList;
 }
